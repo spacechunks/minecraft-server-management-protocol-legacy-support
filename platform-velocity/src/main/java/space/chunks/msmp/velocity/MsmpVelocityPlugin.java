@@ -21,7 +21,7 @@ import space.chunks.msmp.shared.protocol.ProtocolVersion;
     name = "Minecraft Server Management Protocol Legacy Support",
     version = "0.1.0-SNAPSHOT",
     description = "Minecraft Server Management Protocol compatibility service for Velocity",
-    authors = {"spacechunks"}
+    authors = {"Fllip"}
 )
 public final class MsmpVelocityPlugin implements PlatformBridge {
     private final ProxyServer proxy;

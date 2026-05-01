@@ -1,5 +1,5 @@
 name: MinecraftServerManagementProtocolLegacySupport
 main: space.chunks.msmp.bungeecord.MsmpBungeePlugin
 version: ${version}
-author: spacechunks
+author: Fllip
 description: Minecraft Server Management Protocol compatibility service for BungeeCord.

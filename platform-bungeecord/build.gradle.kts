@@ -9,6 +9,9 @@ dependencies {
 }
 
 val pluginVersion = project.version.toString()
+base {
+    archivesName.set("${rootProject.name}-bungeecord")
+}
 
 tasks {
     shadowJar {

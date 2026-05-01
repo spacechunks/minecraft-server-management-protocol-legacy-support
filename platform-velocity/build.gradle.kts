@@ -9,6 +9,10 @@ dependencies {
     annotationProcessor(libs.velocity.api)
 }
 
+base {
+    archivesName.set("${rootProject.name}-velocity")
+}
+
 tasks {
     shadowJar {
         archiveClassifier.set("")

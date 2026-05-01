@@ -9,6 +9,7 @@ bungeecord-api = "1.21-R0.3"
 junit = "4.13.2"
 shadow = "9.4.1"
 run-task = "3.0.2"
+minotaur = "2.9.0"
 
 [libraries]
 java-websocket = { module = "org.java-websocket:Java-WebSocket", version.ref = "java-websocket" }
@@ -25,3 +26,4 @@ junit = { module = "junit:junit", version.ref = "junit" }
 [plugins]
 shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
 run-paper = { id = "xyz.jpenilla.run-paper", version.ref = "run-task" }
+minotaur = { id = "com.modrinth.minotaur", version.ref = "minotaur" }

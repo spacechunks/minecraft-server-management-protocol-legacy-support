@@ -10,6 +10,9 @@ dependencies {
 }
 
 val pluginVersion = project.version.toString()
+base {
+    archivesName.set("${rootProject.name}-spigot")
+}
 
 tasks {
     shadowJar {
