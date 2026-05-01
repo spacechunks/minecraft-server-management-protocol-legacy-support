@@ -1,6 +1,7 @@
 plugins {
     `java-library`
     alias(libs.plugins.shadow)
+    alias(libs.plugins.minotaur)
 }
 
 dependencies {
@@ -27,6 +28,20 @@ tasks {
     build {
         dependsOn(shadowJar)
     }
+}
+
+modrinth {
+    token.set(providers.environmentVariable("MODRINTH_TOKEN"))
+    projectId.set("minecraft-server-management-protocol-legacy-support")
+    versionNumber.set("${project.version}-velocity")
+    versionName.set("${rootProject.name} ${project.version} - Velocity")
+    versionType.set("release")
+    uploadFile.set(tasks.shadowJar)
+    gameVersions.addAll(rootProject.extra["modrinthGameVersions"] as List<String>)
+    loaders.add("velocity")
+    changelog.set(providers.environmentVariable("MODRINTH_CHANGELOG").orElse("Published from main."))
+    syncBodyFrom.set(rootProject.file("README.md").readText())
+    detectLoaders.set(false)
 }
 
 tasks.withType<JavaCompile>().configureEach {
