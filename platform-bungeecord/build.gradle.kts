@@ -41,7 +41,7 @@ modrinth {
     token.set(project.findProperty("modrinthToken") as String? ?: System.getenv("MODRINTH_TOKEN"))
     projectId.set("minecraft-server-management-protocol-legacy-support")
     versionNumber.set("${project.version}-bungeecord")
-    versionName.set("${rootProject.name} ${project.version} - BungeeCord")
+    versionName.set("${project.version} - BungeeCord")
     versionType.set("release")
     uploadFile.set(tasks.shadowJar)
     gameVersions.addAll(rootProject.extra["modrinthGameVersions"] as List<String>)
