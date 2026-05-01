@@ -94,3 +94,7 @@ Velocity and BungeeCord create `management-server.properties` in the plugin data
 - `management-server-tls-enabled`: Enables `wss://`. Requires a valid keystore.
 - `management-server-tls-keystore`: Path to a PKCS12 keystore.
 - `management-server-tls-keystore-password`: Keystore password. It can also be supplied through `MINECRAFT_MANAGEMENT_TLS_KEYSTORE_PASSWORD` or the JVM property `management.tls.keystore.password`.
+
+## License
+
+Licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE).
