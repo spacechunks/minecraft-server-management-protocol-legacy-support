@@ -31,7 +31,7 @@ tasks {
 }
 
 modrinth {
-    token.set(providers.environmentVariable("MODRINTH_TOKEN"))
+    token.set(project.findProperty("modrinthToken") as String? ?: System.getenv("MODRINTH_TOKEN"))
     projectId.set("minecraft-server-management-protocol-legacy-support")
     versionNumber.set("${project.version}-velocity")
     versionName.set("${rootProject.name} ${project.version} - Velocity")

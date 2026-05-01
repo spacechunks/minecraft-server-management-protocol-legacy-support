@@ -43,7 +43,7 @@ tasks {
 }
 
 modrinth {
-    token.set(providers.environmentVariable("MODRINTH_TOKEN"))
+    token.set(project.findProperty("modrinthToken") as String? ?: System.getenv("MODRINTH_TOKEN"))
     projectId.set("minecraft-server-management-protocol-legacy-support")
     versionNumber.set(project.version.toString())
     versionName.set("${rootProject.name} ${versionNumber.get()} - Spigot/Paper")
@@ -54,10 +54,6 @@ modrinth {
     changelog.set(providers.environmentVariable("MODRINTH_CHANGELOG").orElse("Published from main."))
     syncBodyFrom.set(rootProject.file("README.md").readText())
     detectLoaders.set(false)
-}
-
-tasks.modrinth {
-    dependsOn(tasks.modrinthSyncBody)
 }
 
 tasks.withType<JavaCompile>().configureEach {

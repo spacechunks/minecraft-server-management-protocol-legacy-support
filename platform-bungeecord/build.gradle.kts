@@ -38,7 +38,7 @@ tasks {
 }
 
 modrinth {
-    token.set(providers.environmentVariable("MODRINTH_TOKEN"))
+    token.set(project.findProperty("modrinthToken") as String? ?: System.getenv("MODRINTH_TOKEN"))
     projectId.set("minecraft-server-management-protocol-legacy-support")
     versionNumber.set("${project.version}-bungeecord")
     versionName.set("${rootProject.name} ${project.version} - BungeeCord")
@@ -46,6 +46,7 @@ modrinth {
     uploadFile.set(tasks.shadowJar)
     gameVersions.addAll(rootProject.extra["modrinthGameVersions"] as List<String>)
     loaders.add("bungeecord")
+    loaders.add("waterfall")
     changelog.set(providers.environmentVariable("MODRINTH_CHANGELOG").orElse("Published from main."))
     syncBodyFrom.set(rootProject.file("README.md").readText())
     detectLoaders.set(false)

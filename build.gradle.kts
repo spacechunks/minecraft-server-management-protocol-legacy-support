@@ -38,13 +38,3 @@ extra["modrinthGameVersions"] = listOf(
     "1.20.6",
     "1.21.9",
 )
-
-tasks.register("publishModrinth") {
-    group = "publishing"
-    description = "Publish all platform artifacts to Modrinth."
-    dependsOn(
-        ":platform-spigot:modrinth",
-        ":platform-velocity:modrinth",
-        ":platform-bungeecord:modrinth",
-    )
-}
