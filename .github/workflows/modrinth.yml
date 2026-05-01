@@ -1,19 +1,10 @@
 name: Publish to Modrinth
 
 on:
-  release:
-    types: [published]
+  push:
+    branches: [main]
   workflow_dispatch:
     inputs:
-      version_type:
-        description: Modrinth version type
-        required: true
-        default: release
-        type: choice
-        options:
-          - release
-          - beta
-          - alpha
       changelog:
         description: Markdown changelog for Modrinth
         required: false
@@ -42,8 +33,6 @@ jobs:
       - name: Publish to Modrinth
         env:
           MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
-          MODRINTH_VERSION_TYPE: ${{ inputs.version_type || 'release' }}
-          MODRINTH_CHANGELOG: ${{ github.event.release.body || inputs.changelog || 'See the GitHub release notes for changes.' }}
+          MODRINTH_CHANGELOG: ${{ inputs.changelog || github.event.head_commit.message || 'Published from main.' }}
         run: |
-          ./gradlew build modrinth \
-            -PmodrinthVersionType="${MODRINTH_VERSION_TYPE}"
+          ./gradlew build modrinth
