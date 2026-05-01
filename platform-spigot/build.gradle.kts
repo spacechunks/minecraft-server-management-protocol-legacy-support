@@ -45,8 +45,8 @@ tasks {
 modrinth {
     token.set(project.findProperty("modrinthToken") as String? ?: System.getenv("MODRINTH_TOKEN"))
     projectId.set("minecraft-server-management-protocol-legacy-support")
-    versionNumber.set(project.version.toString())
-    versionName.set("${project.version} - Spigot/Paper")
+    versionNumber.set("${project.version}-spigot-paper")
+    versionName.set("${project.version}-spigot-paper")
     versionType.set("release")
     uploadFile.set(tasks.shadowJar)
     gameVersions.addAll(rootProject.extra["modrinthGameVersions"] as List<String>)
