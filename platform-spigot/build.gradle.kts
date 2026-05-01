@@ -15,6 +15,10 @@ base {
 }
 
 tasks {
+    jar {
+        archiveClassifier.set("plain")
+    }
+
     shadowJar {
         archiveClassifier.set("")
         relocate("org.java_websocket", "space.chunks.msmp.libs.org.java_websocket")
