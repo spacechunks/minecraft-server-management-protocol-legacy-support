@@ -1,0 +1,40 @@
+plugins {
+    `java-library`
+    alias(libs.plugins.shadow)
+    alias(libs.plugins.run.paper)
+}
+
+dependencies {
+    implementation(project(":shared"))
+    compileOnly(libs.spigot.api)
+}
+
+val pluginVersion = project.version.toString()
+
+tasks {
+    shadowJar {
+        archiveClassifier.set("")
+        relocate("org.java_websocket", "space.chunks.msmp.libs.org.java_websocket")
+        relocate("com.fasterxml.jackson", "space.chunks.msmp.libs.com.fasterxml.jackson")
+    }
+
+    processResources {
+        filteringCharset = "UTF-8"
+        filesMatching("plugin.yml") {
+            expand("version" to pluginVersion)
+        }
+    }
+
+    build {
+        dependsOn(shadowJar)
+    }
+
+    runServer {
+        minecraftVersion("1.8.8")
+    }
+}
+
+tasks.withType<JavaCompile>().configureEach {
+    options.release.set(8)
+    options.compilerArgs.add("-Xlint:-options")
+}

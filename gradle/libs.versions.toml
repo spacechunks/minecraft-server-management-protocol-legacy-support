@@ -1,0 +1,27 @@
+[versions]
+java-websocket = "1.6.0"
+jackson = "2.21.3"
+slf4j = "2.0.17"
+spigot-api = "1.8.8-R0.1-SNAPSHOT"
+spigot-api-modern = "1.21.9-R0.1-SNAPSHOT"
+velocity-api = "3.4.0"
+bungeecord-api = "1.21-R0.3"
+junit = "4.13.2"
+shadow = "9.4.1"
+run-task = "3.0.2"
+
+[libraries]
+java-websocket = { module = "org.java-websocket:Java-WebSocket", version.ref = "java-websocket" }
+jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jackson" }
+jackson-datatype-jsr310 = { module = "com.fasterxml.jackson.datatype:jackson-datatype-jsr310", version.ref = "jackson" }
+slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
+slf4j-nop = { module = "org.slf4j:slf4j-nop", version.ref = "slf4j" }
+spigot-api = { module = "org.spigotmc:spigot-api", version.ref = "spigot-api" }
+spigot-api-modern = { module = "org.spigotmc:spigot-api", version.ref = "spigot-api-modern" }
+velocity-api = { module = "com.velocitypowered:velocity-api", version.ref = "velocity-api" }
+bungeecord-api = { module = "net.md-5:bungeecord-api", version.ref = "bungeecord-api" }
+junit = { module = "junit:junit", version.ref = "junit" }
+
+[plugins]
+shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
+run-paper = { id = "xyz.jpenilla.run-paper", version.ref = "run-task" }

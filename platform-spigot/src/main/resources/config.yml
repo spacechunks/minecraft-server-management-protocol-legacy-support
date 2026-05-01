@@ -1,0 +1,8 @@
+management-server-enabled: false
+management-server-host: localhost
+management-server-port: 0
+management-server-secret: ''
+management-server-allowed-origins: ''
+management-server-tls-enabled: false
+management-server-tls-keystore: ''
+management-server-tls-keystore-password: ''

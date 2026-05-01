@@ -1,0 +1,6 @@
+name: MinecraftServerManagementProtocolLegacySupport
+main: space.chunks.msmp.spigot.MsmpSpigotPlugin
+version: ${version}
+author: spacechunks
+description: Minecraft Server Management Protocol compatibility service for Spigot and Paper.
+load: STARTUP
